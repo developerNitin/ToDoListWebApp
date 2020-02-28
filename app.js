@@ -1,21 +1,16 @@
 // jshint esversion: 6
- const bodyparser = require("body-parser");
+
  const express = require("express");
+ const bodyparser = require("body-parser");
 
- app = express();
+ const app = express();
 
- app.get("/" + function(req, res) {
-   res.send("Hello there!");
+ app.use("view engine", "ejs");
+
+ app.get("/", function(req, res) {
+   res.write("Hello there!");
+   res.send();
  });
-
-
-
-
-
-
-
-
-
 
 
 
