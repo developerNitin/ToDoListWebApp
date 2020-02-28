@@ -10,18 +10,18 @@ app.use(bodyparser.urlencoded({extended: true}));
 
 app.set('view engine', 'ejs');
 
-var items = [];
+let items = [];
 
 app.get("/", function(req, res) {
-  var today = new Date();
+  let today = new Date();
 
-  var option = {
+  let option = {
     weekday: "long",
     day: "numeric",
     month: "long"
   };
 
-  var day = today.toLocaleDateString("en-US", option);
+  let day = today.toLocaleDateString("en-US", option);
 
   res.render("list", {
     Day: day, newListItems: items
@@ -29,7 +29,7 @@ app.get("/", function(req, res) {
 });
 
 app.post("/", function(req, res) {
-  var item = req.body.newItems;
+  let item = req.body.newItems;
   items.push(item);
 
   res.redirect("/");
