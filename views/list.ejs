@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="utf-8">
   <title>To Do List</title>
@@ -8,18 +9,18 @@
 <body>
 
   <h1 style="text-align: center"> <%= Day %>.</h1>
+  <h2 style="text-align: center">Add Items</h2>
 
   <ul style="text-align: center; list-style-type: none">
+    <%for(var i = 0; i < newListItems.length; i++) {%>
     <li>
-      hello
+      <%= newListItems[i] %>
     </li>
-    <li>
-      <%= newItem %>
-    </li>
+    <%}%>
   </ul>
 
   <form style="text-align: center" class="" action="/" method="post">
-    <input type="text" name="newItem" value="">
+    <input type="text" name="newItems" value="">
     <button type="submit" name="button">add</button>
   </form>
 </body>

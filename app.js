@@ -10,7 +10,7 @@ app.use(bodyparser.urlencoded({extended: true}));
 
 app.set('view engine', 'ejs');
 
-var item = "";
+var items = [];
 
 app.get("/", function(req, res) {
   var today = new Date();
@@ -24,12 +24,14 @@ app.get("/", function(req, res) {
   var day = today.toLocaleDateString("en-US", option);
 
   res.render("list", {
-    Day: day, newItem: item
+    Day: day, newListItems: items
   });
 });
 
 app.post("/", function(req, res) {
-  item = req.body.newItem;
+  var item = req.body.newItems;
+  items.push(item);
+
   res.redirect("/");
 });
 
