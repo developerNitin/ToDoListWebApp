@@ -5,6 +5,8 @@ const bodyparser = require("body-parser");
 
 const app = express();
 
+app.use(bodyparser.urlencoded({extended: true}));
+
 app.set('view engine', 'ejs');
 
 app.get("/", function(req, res) {
@@ -23,6 +25,12 @@ app.get("/", function(req, res) {
     Day: day
   });
 
+  app.post("/", function(req, res) {
+    var item = req.body.newItem;
+    res.render("list", {
+      newItem: item
+    });
+  });
 });
 
 

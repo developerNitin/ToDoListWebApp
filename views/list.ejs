@@ -7,9 +7,18 @@
 </head>
 
 <body>
+  <h1 style="text-align: center"> <%= Day %>.</h1>
 
-<h1 style="text-align: center"> <%= Day %>.</h1>
+  <li style="text-align: center">
+    <ul>
+      <%= newItem %>
+    </ul>
+  </li>
 
+  <form style="text-align: center" class="" action="/" method="post">
+    <input type="text" name="newItem" value="">
+    <button type="submit" name="button">add</button>
+  </form>
 </body>
 
 </html>
