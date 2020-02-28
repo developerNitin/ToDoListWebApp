@@ -2,6 +2,7 @@
 
 const express = require("express");
 const bodyparser = require("body-parser");
+const ejsLint = require('ejs-lint');
 
 const app = express();
 
