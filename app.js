@@ -9,9 +9,10 @@ app.use(bodyparser.urlencoded({extended: true}));
 
 app.set('view engine', 'ejs');
 
+var item = "";
+
 app.get("/", function(req, res) {
   var today = new Date();
-
 
   var option = {
     weekday: "long",
@@ -22,15 +23,13 @@ app.get("/", function(req, res) {
   var day = today.toLocaleDateString("en-US", option);
 
   res.render("list", {
-    Day: day
+    Day: day, newItem: item
   });
+});
 
-  app.post("/", function(req, res) {
-    var item = req.body.newItem;
-    res.render("list", {
-      newItem: item
-    });
-  });
+app.post("/", function(req, res) {
+  item = req.body.newItem;
+  res.redirect("/");
 });
 
 
