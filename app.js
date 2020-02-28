@@ -7,6 +7,7 @@ const ejsLint = require('ejs-lint');
 const app = express();
 
 app.use(bodyparser.urlencoded({extended: true}));
+app.use(express.static("public"));
 
 app.set('view engine', 'ejs');
 
