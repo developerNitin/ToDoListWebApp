@@ -5,11 +5,21 @@
 
  const app = express();
 
- app.use("view engine", "ejs");
+ app.set('view engine', 'ejs');
 
  app.get("/", function(req, res) {
-   res.write("Hello there!");
-   res.send();
+   var today = new Date();
+   var currentDay = today.getDay();
+   var day = "";
+
+   if(currentDay === 6 || currentDay === 0) {
+     day = "weekend";
+   } else {
+     day = "weekday";
+   }
+
+   res.render("list", {Day: day});
+
  });
 
 
