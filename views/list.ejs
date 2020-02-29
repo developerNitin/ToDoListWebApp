@@ -1,6 +1,8 @@
 <%- include("header"); -%>
 
 <body>
+  <%- include("MenuBar"); -%>
+
   <div class="box" id="heading">
     <h1><%= listTitle %></h1>
   </div>
@@ -15,7 +17,7 @@
 
     <form class="item" style="text-align: center" action="/" method="post">
       <input type="text" name="newItems" placeholder="New Item" autocomplete="off">
-      <button type="submit" name="list" value="<%= listTitle %>">+</button>
+      <button class="button" type="submit" name="list" value="<%= listTitle %>">+</button>
     </form>
   </div>
 </body>

@@ -9,6 +9,7 @@ app.use(bodyparser.urlencoded({extended: true}));
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
 
+
 let items = [];
 let workItem = [];
 
@@ -39,6 +40,16 @@ app.post("/", function(req, res) {
     items.push(item);
     res.redirect("/");
   }
+
+  if(req.body.buttom === "home") {
+    res.redirect("/");
+  } else if(req.body.buttom === "about") {
+    res.redirect("/about");
+  } else if(req.body.buttom === "work") {
+    res.redirect("/work");
+  } else {
+
+  }
 });
 
 
@@ -50,6 +61,10 @@ app.get("/work", function(req, res) {
   });
 });
 
+
+app.get("/about", function(req, res) {
+  res.render("about");
+});
 
 
 
