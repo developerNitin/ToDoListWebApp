@@ -3,6 +3,7 @@
 const express = require("express");
 const bodyparser = require("body-parser");
 const ejsLint = require('ejs-lint');
+const date = require(__dirname + "/date.js");
 const app = express();
 
 app.use(bodyparser.urlencoded({
@@ -17,13 +18,7 @@ let workItem = [];
 
 
 app.get("/", function(req, res) {
-  let today = new Date();
-  let option = {
-    weekday: "long",
-    day: "numeric",
-    month: "long"
-  };
-  let day = today.toLocaleDateString("en-US", option);
+  let day = date();
 
   res.render("list", {
     listTitle: day,
@@ -34,6 +29,7 @@ app.get("/", function(req, res) {
 
 app.post("/", function(req, res) {
   let item = req.body.newItems;
+  
   if (req.body.list === "WorkList") {
     workItem.push(item);
     res.redirect("/work");
@@ -52,9 +48,6 @@ app.get("/work", function(req, res) {
   });
 });
 
-app.post("/work", function() {
-
-});
 
 app.get("/about", function(req, res) {
   res.render("about");
