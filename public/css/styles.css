@@ -5,9 +5,7 @@ body {
 
 html {
   background-color: #E4E9FD;
-  background-color: #E4E9FD ;
   /* background-image: -webkit-linear-gradient(60deg, #A683E3 50%, #E4E9FD 50%); */
-  min-height: 850px;
   font-family: 'helvetica neue';
 }
 
@@ -30,7 +28,7 @@ h1 {
 }
 
 .menubarForm {
-  margin: 0; 
+  margin: 0;
 }
 
 .buttonLook {
@@ -134,7 +132,13 @@ input[type="text"]:focus {
 }
 
 footer {
+  padding-top: 90px ;
   color: white;
   color: rgba(0, 0, 0, 0.5);
   text-align: center;
+}
+
+.bottom {
+  height: 150px;
+  background-color: #9575cc;
 }

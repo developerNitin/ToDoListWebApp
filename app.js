@@ -48,7 +48,7 @@ app.post("/", function(req, res) {
   } else if(req.body.buttom === "work") {
     res.redirect("/work");
   } else {
-
+    res.redirect("/");
   }
 });
 
@@ -61,12 +61,34 @@ app.get("/work", function(req, res) {
   });
 });
 
+app.post("/work", function(req, res) {
+  if(req.body.buttom === "home") {
+    res.redirect("/");
+  } else if(req.body.buttom === "about") {
+    res.redirect("/about");
+  } else if(req.body.buttom === "work") {
+    res.redirect("/work");
+  } else {
+    res.redirect("/");
+  }
+});
+
 
 app.get("/about", function(req, res) {
   res.render("about");
 });
 
-
+app.post("/about", function(req, res) {
+  if(req.body.buttom === "home") {
+    res.redirect("/");
+  } else if(req.body.buttom === "about") {
+    res.redirect("/about");
+  } else if(req.body.buttom === "work") {
+    res.redirect("/work");
+  } else {
+    res.redirect("/");
+  }
+});
 
 app.listen(3000, function() {
   console.log("Server is running on port 3000");

@@ -3,23 +3,27 @@
 <body>
   <%- include("MenuBar"); -%>
 
-  <div class="box" id="heading">
-    <h1><%= listTitle %></h1>
-  </div>
-
-  <div class="box">
-    <% for(var i = 0; i < newListItems.length; i++) { %>
-    <div class="item">
-      <input type="checkbox">
-      <p class=""><%= newListItems[i] %></p>
+  <div class="" style="min-height: 510px">
+    <div class="box" id="heading">
+      <h1><%= listTitle %></h1>
     </div>
-    <% } %>
 
-    <form class="item" style="text-align: center" action="/" method="post">
-      <input type="text" name="newItems" placeholder="New Item" autocomplete="off">
-      <button class="button" type="submit" name="list" value="<%= listTitle %>">+</button>
-    </form>
+    <div class="box">
+      <% for(var i = 0; i < newListItems.length; i++) { %>
+      <div class="item">
+        <input type="checkbox">
+        <p class=""><%= newListItems[i] %></p>
+      </div>
+      <% } %>
+
+      <form class="item" style="text-align: center" action="/" method="post">
+        <input type="text" name="newItems" placeholder="New Item" autocomplete="off">
+        <button class="button" type="submit" name="list" value="<%= listTitle %>">+</button>
+      </form>
+
+    </div>
   </div>
+
 </body>
 
 <%- include("footer"); -%>
